@@ -4,6 +4,7 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import { loginUser } from '../../redux/reducer';
 import faceLogo from '../../images/face_logo.png';
+import styleAuth from './styleAuth.css'
 
 class Auth extends Component {
     constructor(){
@@ -55,18 +56,16 @@ class Auth extends Component {
                     <h1 className="auth-title">Helo</h1>
 
                     <div className="auth-input-box">
-                        <p>Username:</p>
-                        <input type="text" placeholder="username..."
-                            name="username" value={username}
+                        <p className="auth-p">Username:</p>
+                        <input type="text" name="username" value={username}
                             onChange={e => this.handleChange(e)}/>
                     </div>
                     <div className="auth-input-box">
-                        <p>Password:</p>
-                        <input type="password" placeholder="password..."
-                            name="password" value={password}
+                        <p className="auth-p">Password:</p>
+                        <input type="password" name="password" value={password}
                             onChange={e => this.handleChange(e)}/>
                     </div>
-                    <div className='auth_button_container'>
+                    <div className='auth-button-container'>
                         <button className='auth-button' onClick={(e) => this.login(e)}> Login </button>
                         <button className='auth-button' onClick={(e) => this.register(e)}> Register </button>
                     </div>
