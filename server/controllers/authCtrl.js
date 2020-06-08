@@ -13,7 +13,6 @@ module.exports = {
             if (authenticated) {
                 req.session.user = {
                     userId: user[0].user_id,
-                    email: user[0].email
                 }
                 res.status(200).send(req.session.user)
             } else {

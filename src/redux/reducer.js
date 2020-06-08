@@ -14,7 +14,7 @@ const initialState = {
 export function loginUser(user){
   return {
       type: LOGIN_USER,
-      payload: user
+      payload: initialState
     }
 }
 
@@ -27,7 +27,7 @@ export function logoutUser(){
 export function getUser(){
     const user = axios.get('/auth/user')
     return {
-        type: GET_USER, payload: user
+        type: GET_USER, payload: initialState
     }
 }
   
@@ -44,6 +44,6 @@ export function getUser(){
       case GET_USER + '_REJECTED':
           return initialState
       default:
-        return state;
+        return initialState;
     }
   }

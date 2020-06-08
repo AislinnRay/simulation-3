@@ -23,7 +23,7 @@ class Dashboard extends Component {
 
   grabPosts = () => {
     let { search, myPosts } = this.state;
-    let url = `/posts/${this.props.userId}`;
+    let url = `/api/posts/${this.props.userId}`;
     if (myPosts && !search) {
       url += '?mine=true';
     } else if (!myPosts && search) {
@@ -39,7 +39,7 @@ class Dashboard extends Component {
 
   reset = () => {
     let { myPosts } = this.state;
-    let url = `/posts/${this.props.userId}`;
+    let url = `/api/posts/${this.props.user_id}`;
     if (myPosts) {
       url += '?mine=true';
     }
@@ -50,12 +50,12 @@ class Dashboard extends Component {
   }
   render() {
     let posts = this.state.posts.map((element) => {
-      return <Link to={`/posts/${element.post_id}`} key={element.post_id}>
+      return <Link to={`/api/posts/${element.post_id}`} key={element.post_id}>
         <div className='content-box dash-post-box'>
           <h3>{element.title}</h3>
           <div className='author-box'>
             <p>by {element.author_username}</p>
-            <img src={element.profile_pic} alt='author' />
+            <img src={element.profilePic} alt='author' />
           </div>
         </div>
       </Link>

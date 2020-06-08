@@ -4,7 +4,7 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import { loginUser } from '../../redux/reducer';
 import faceLogo from '../../images/face_logo.png';
-import styleAuth from './styleAuth.css'
+import './styleAuth.css'
 
 class Auth extends Component {
     constructor(){
