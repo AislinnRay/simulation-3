@@ -44,7 +44,7 @@ app.get('/auth/user', authCtrl.getUser)
 //Other Endpoints
 app.get('/api/posts/:post_id', postCtrl.getPost)
 app.get('/api/posts', postCtrl.getPosts)
-app.post('/api/posts', postCtrl.addPost)
+app.post('/api/posts/:post_id', postCtrl.addPost)
 app.put('/api/posts/:post_id', postCtrl.editPost)
 app.delete('/api/posts/:post_id', postCtrl.deletePost)
 

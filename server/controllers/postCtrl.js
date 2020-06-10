@@ -4,7 +4,7 @@ module.exports = {
             const db = req.app.get('db')
             const { post_id } = req.params
             db.get_post(post_id)
-            .then((results) => res.status(200).send(results[0]))
+            .then((result) => res.status(200).send(result[0]))
             .catch((err) => res.status(500).send(err))
         },
     //read
@@ -16,8 +16,11 @@ module.exports = {
         },
     //creat/add/post
         addPost: (req, res) => {
+            console.log("1")
             const db = req.app.get("db")
+            console.log(req.body, "2")
             const { title, img, content, author_id} = req.body
+            console.log(title, "3")
             db.add_post(title, img, content, author_id)
             .then((post) => res.status(200).send(post))
             .catch((err) => res.status(500).send(err))

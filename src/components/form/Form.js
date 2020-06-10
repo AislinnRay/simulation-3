@@ -18,12 +18,15 @@ class Form extends Component {
   submit() {
     if (this.props.userId) {
       axios.post(`/api/posts/${this.props.userId}`, this.state)
-        .then(res => this.props.history.push('/dashboard'))
+        .then(res => {
+          console.log("submit form", this.props) 
+          this.props.history.push('/dashboard')})
     } else {
       alert('You must log in to create posts')
     }
   }
   render() {
+    console.log("form props", this.props)
     let imgSrc = this.state.img ? this.state.img : noImage;
     return (
       <div className='Form content-box'>
@@ -48,7 +51,7 @@ class Form extends Component {
 }
 function mapStateToProps(state) {
   return {
-    user_id: state.userId
+    userId: state.user.userId
   }
 }
 export default connect(mapStateToProps)(Form);

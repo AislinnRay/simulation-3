@@ -23,6 +23,8 @@ class Post extends Component {
       })
   }
   render() {
+    console.log("post id", this.props.match.params.id)
+    console.log("post post_id", this.props.match.params.post_id)
     let imgSrc = this.state.img ? this.state.img : noImage;
     return (
       <div className='Post content_box'>

@@ -26,6 +26,7 @@ class Auth extends Component {
         e.preventDefault();
         axios.post('/auth/login', this.state)
         .then( res => {
+            console.log("4", res.data)
             this.props.loginUser(res.data)
             this.props.history.push('/dashboard')
         })
@@ -48,6 +49,7 @@ class Auth extends Component {
     }
 
     render(){
+        //console.log(this.props)
         const {username, password} = this.state
         return(
             <div className="Auth">
